@@ -179,14 +179,6 @@ TW_USE_FSCRYPT_POLICY := 2
 # Network
 BUILD_BROKEN_USES_NETWORK := true
 
-# Vibrator
-# TARGET_RECOVERY_DEVICE_MODULES += \
-    android.hardware.vibrator-V2-ndk_platform \
-    android.hardware.vibrator-V2-cpp
-
-# RECOVERY_LIBRARY_SOURCE_FILES += \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator-V2-cpp.so \
-    $(TARGET_OUT_SHARED_LIBRARIES)/android.hardware.vibrator-V2-ndk_platform.so
 
 TW_SUPPORT_INPUT_AIDL_HAPTICS := true
 TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
@@ -203,26 +195,38 @@ ifeq ($(TW_DEVICE_VERSION),)
 TW_DEVICE_VERSION=12.0
 endif
 RECOVERY_SDCARD_ON_DATA := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_USES_LOGD := true
-TW_BACKUP_EXCLUSIONS := /data/fonts
 TW_BATTERY_SYSFS_WAIT_SECONDS := 5
-TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone20/temp"
-TW_DEFAULT_BRIGHTNESS := 128
-TW_DEVICE_VERSION :=By snnbyyds on $(shell date +%Y%m%d)
 TW_EXCLUDE_APEX := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-TW_EXTRA_LANGUAGES := true
-TW_FRAMERATE := 60
-TW_HAS_EDL_MODE := true
 TW_INCLUDE_NTFS_3G := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko snd_event_dlkm.ko msm_drm.ko q6_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko"
 TW_LOAD_VENDOR_MODULES_EXCLUDE_GKI := true
-TW_MAX_BRIGHTNESS := 225
-TW_STATUS_ICONS_ALIGN := center
 TWRP_INCLUDE_LOGCAT := true
+TW_LOAD_VENDOR_MODULES := "adsp_loader_dlkm.ko snd_event_dlkm.ko msm_drm.ko q6_dlkm.ko q6_notifier_dlkm.ko q6_pdr_dlkm.ko"
+TARGET_RECOVERY_QCOM_RTC_FIX := true
+TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone50/temp"
+TW_THEME := portrait_hdpi
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
+TW_QCOM_ATS_OFFSET := 1621580431500
+TW_DEFAULT_BRIGHTNESS := 500
+TW_MAX_BRIGHTNESS := 1000
+TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_EXTRA_LANGUAGES := true
+TW_NO_EXFAT_FUSE := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_RESETPROP := true
+TW_NO_SCREEN_BLANK := true
+TW_CUSTOM_BATTERY_POS := 740
+TW_CUSTOM_CLOCK_POS := 500
+TW_CUSTOM_CPU_POS := 180
+TW_FRAMERATE := 60
+TW_NO_CPU_TEMP := true
+TW_HAS_EDL_MODE := true
+TW_Y_OFFSET := 104
+TW_H_OFFSET := -104
+TW_INCLUDE_FASTBOOTD := true
 
 USE_RECOVERY_INSTALLER := true
 RECOVERY_INSTALLER_PATH := device/qcom/lahaina/installer
@@ -235,7 +239,6 @@ ifneq ($(wildcard device/common/version-info/.),)
     # device version is optional - the default value is "0" if nothing is set in device tree
     CUSTOM_TWRP_DEVICE_VERSION := 0
     # version prefix is optional - the default value is "LOCAL" if nothing is set in device tree
-    CUSTOM_TWRP_VERSION_PREFIX := Snnbyyds
 
     include device/common/version-info/custom_twrp_version.mk
 
