@@ -35,7 +35,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 # Device Info
     export FOX_ARCH=arm64
     export FOX_VARIANT="12.1"
-    export TARGET_DEVICE_ALT="RE58B2L1,RMX3311,RMX3312"
+    export TARGET_DEVICE_ALT="RE58B2L1,RMX3311,RMX3312,lahaina"
 
 # Magisk
     export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk_v26_3.zip
