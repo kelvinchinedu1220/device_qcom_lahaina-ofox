@@ -2,7 +2,7 @@
   
 #!/usr/bin/env bash
 
-FDEVICE="lahaina"
+FDEVICE="RE58B2L1,RMX3311,RMX3312,lahaina"
 #set -o xtrace
 
 fox_get_target_device() {
