@@ -1,1 +1,2 @@
-require board=lahaina
+require board=lahaina,porsche,RE58B2L1,RE52BL1,RNX3311,RMX3312
+
