@@ -27,21 +27,14 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export LC_ALL="C"
     export OF_NO_REFLASH_CURRENT_ORANGEFOX=1
 
-# Asserts
-    export FOX_TARGET_DEVICES="RE58B2L1,RMX3311,RMX3312,lahaina,porsche"
-    export TARGET_DEVICE_ALT="RE58B2L1,RMX3311,RMX3312,lahaina,porsche"
-
 # Maintaining Info
     export OF_MAINTAINER="Covenant Fuchsia"
     export FOX_VERSION=$(date +%Y.%m.%d)
     export FOX_BUILD_TYPE=Unofficial_Covenant_Fuchsia
 
-
 # Device Info
     export FOX_ARCH=arm64
     export FOX_VARIANT="12.1"
-
-
 
 # Magisk
     export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk_v26_3.zip
@@ -74,7 +67,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_AB_DEVICE_WITH_RECOVERY_PARTITION=1
     export FOX_VIRTUAL_AB_DEVICE=1
     export FOX_VANILLA_BUILD=1
-
 
 # Other Patches
     export OF_NO_RELOAD_AFTER_DECRYPTION=1
