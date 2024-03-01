@@ -1,5 +1,5 @@
 # Reserved for OrangeFox Building Vars
-
+  
 #!/usr/bin/env bash
 
 FDEVICE="lahaina"
@@ -25,20 +25,20 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export ALLOW_MISSING_DEPENDENCIES=true
     export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
     export LC_ALL="C"
-    export OF_NO_REFLASH_CURRENT_ORANGEFOX=1
-
+  
 # Maintaining Info
     export OF_MAINTAINER="Covenant Fuchsia"
     export FOX_VERSION=$(date +%Y.%m.%d)
     export FOX_BUILD_TYPE=Unofficial_Covenant_Fuchsia
 
+  	
 # Device Info
     export FOX_ARCH=arm64
     export FOX_VARIANT="12.1"
 
 # Magisk
     export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk_v26_3.zip
-
+  
 # Funtions
     export FOX_REPLACE_BUSYBOX_PS=1
     export FOX_REPLACE_TOOLBOX_GETPROP=1
@@ -52,8 +52,8 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_ENABLE_LPTOOLS=1
     export FOX_DELETE_AROMAFM=1
     export OF_DISABLE_KEYMASTER2=1
-    export FOX_ENABLE_APP_MANAGER=1
-
+    export FOX_ENABLE_APP_MANAGER=1 
+    
 # Display Settings
     export OF_HIDE_NOTCH=1
     export OF_CLOCK_POS=1
@@ -62,12 +62,13 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_SCREEN_H=2400
     export OF_STATUS_INDENT_LEFT=48
     export OF_STATUS_INDENT_RIGHT=48
-
+    
 # A/B-Related
     export OF_AB_DEVICE_WITH_RECOVERY_PARTITION=1
+    #export OF_VIRTUAL_AB_DEVICE=1
     export FOX_VIRTUAL_AB_DEVICE=1
     export FOX_VANILLA_BUILD=1
-
+  
 # Other Patches
     export OF_NO_RELOAD_AFTER_DECRYPTION=1
     export OF_FBE_METADATA_MOUNT_IGNORE=1

@@ -129,11 +129,11 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 32)
 BOARD_METADATAIMAGE_PARTITION_SIZE := 16777216
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := $(BOARD_BOOTIMAGE_PARTITION_SIZE)
 
-BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_ODMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_SYSTEM_EXTIMAGE_FILE_SYSTEM_TYPE := erofs
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
@@ -232,17 +232,3 @@ USE_RECOVERY_INSTALLER := true
 RECOVERY_INSTALLER_PATH := device/qcom/lahaina/installer
 
 ALLOW_MISSING_DEPENDENCIES := true
-
-# Custom TWRP Versioning
-# See https://github.com/minimal-manifest-twrp/android_device_common_version-info for details
-ifneq ($(wildcard device/common/version-info/.),)
-    # device version is optional - the default value is "0" if nothing is set in device tree
-    CUSTOM_TWRP_DEVICE_VERSION := 0
-    # version prefix is optional - the default value is "LOCAL" if nothing is set in device tree
-
-    include device/common/version-info/custom_twrp_version.mk
-
-    ifeq ($(CUSTOM_TWRP_VERSION),)
-        CUSTOM_TWRP_VERSION := $(shell date +%Y%m%d)-01
-    endif
-endif
