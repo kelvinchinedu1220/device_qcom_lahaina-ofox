@@ -28,7 +28,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
   
 # Maintaining Info
     export OF_MAINTAINER="nino"
-    export FOX_VARIANT="R11.2-ce3_nino"
     export FOX_BUILD_TYPE=Unofficial_nino
 
   	
